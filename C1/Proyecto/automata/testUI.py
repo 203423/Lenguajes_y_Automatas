@@ -28,18 +28,13 @@ def convertions(archivo):
     tabula.convert_into(archivo, "./C1/Proyecto/automata/1.txt",output_format="csv", pages='all',area=[140,12.75,790.5,950])
     lineas_validadas.insert(END,"PDF convertido a txt")
     #Create headers
-    with open('./C1/Proyecto/automata/2.txt', 'w',encoding="utf-8") as ftemp:
+    with open('./C1/Proyecto/automata/2.csv', 'w',encoding="latin1") as ftemp:
         ftemp.write('CONTABILIDAD,AÑO DE COMPRA,CODIGO,CÓDIGO SISMOB WEB,DESCRIPCION DEL BIEN,VALOR EN LIBROS,PORCENTAJE DE DEPRECIACIÓN, AÑOS TRANSCURRIDOS, PRECIO DEPRECIADO, TOTAL CONTABLE')
 
 def eliminacionDeTemps():
     if os.path.exists("./C1/Proyecto/automata/1.txt"):
-        print("El archivo existe")
+        print("caché eliminada")
         os.remove("./C1/Proyecto/automata/1.txt")
-    else:
-        pass
-    if os.path.exists("./C1/Proyecto/automata/2.txt"):
-        print("El archivo existe")
-        os.remove("./C1/Proyecto/automata/2.txt")
     else:
         pass
 
@@ -69,11 +64,9 @@ def comprobacion():
             cadena_aceptada =(str(k)+" Cadenas aceptadas")
             cadena_rechazada =(str(j)+" Cadenas rechazadas")
             #Create temporal file
-            with open('./C1/Proyecto/automata/2.txt','a',encoding="utf-8") as f:
+            with open('./C1/Proyecto/automata/2.csv','a',encoding="latin1") as f:
                 f.write("\n")
                 f.write(my_input_str)
-                read_file = test.pd.read_csv ('./C1/Proyecto/automata/2.txt')
-                read_file.to_csv ('./C1/Proyecto/automata/1.csv', index=None, header=['CONTABILIDAD','AÑO DE COMPRA','CODIGO','CÓDIGO SISMOB WEB','DESCRIPCION DEL BIEN','VALOR EN LIBROS','PORCENTAJE DE DEPRECIACIÓN', 'AÑOS TRANSCURRIDOS', 'PRECIO DEPRECIADO', 'TOTAL CONTABLE'],encoding='latin1',mode='w')
         lineas_validadas.insert(END,"\n"+cadena_rechazada+"\n")        
         lineas_validadas.insert(END,cadena_aceptada+"\n")   
         lineas_validadas.insert(END,"Archivo validado" +"\n"+ "Archivo guardado en ./C1/Proyecto/automata/1.csv")
