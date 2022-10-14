@@ -27,7 +27,7 @@ def convertions(archivo):
     tabula.convert_into(archivo, "./C1/Proyecto/automata/1.txt",output_format="csv", pages='all',area=[140,12.75,790.5,950])
     lineas_validadas.insert(END,"PDF convertido a txt")
     #Create headers
-    with open('./C1/Proyecto/automata/2.csv', 'w',encoding="latin1") as ftemp:
+    with open('./C1/Proyecto/automata/1.csv', 'w',encoding="latin1") as ftemp:
         ftemp.write('CONTABILIDAD,AÑO DE COMPRA,CODIGO,CÓDIGO SISMOB WEB,DESCRIPCION DEL BIEN,VALOR EN LIBROS,PORCENTAJE DE DEPRECIACIÓN, AÑOS TRANSCURRIDOS, PRECIO DEPRECIADO, TOTAL CONTABLE')
 
 def eliminacionDeTemps():
