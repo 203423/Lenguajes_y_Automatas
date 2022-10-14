@@ -1,6 +1,5 @@
 from cProfile import label
 from tkinter import filedialog
-from tkinter.ttk import Treeview
 from tkinter import Tk,Frame, END, Label, CENTER, Button, Text
 import os
 import tabula
